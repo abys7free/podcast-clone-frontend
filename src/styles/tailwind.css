@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+
+body {
+  @apply bg-black
+}
+
+.input {
+  @apply focus:outline-none focus:border-gray-500 p-3 border-2 rounded-lg text-lg font-light border-gray-200 transition-colors;
+}
+
+@tailwind utilities;
