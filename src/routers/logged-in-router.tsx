@@ -1,13 +1,14 @@
 import React from 'react'
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
-import { Header } from '../conponents/header'
+import { Header } from '../components/header'
 import { useMe } from '../hooks/useMe'
-import { Podcast } from '../pages/client/podcasts'
+import { NotFound } from '../pages/404'
+import { Podcasts } from '../pages/client/podcasts'
 
 
 const ClientRoutes = [
   <Route path="/" exact>
-    <Podcast />
+    <Podcasts />
   </Route>,
 ]
 
@@ -24,7 +25,9 @@ export const LoggedInRouter = () => {
       <Header />
       <Switch>
         {data.me.role === "Listener" && ClientRoutes}
-        <Redirect to="/" />
+        <Route>
+          <NotFound />
+        </Route>
       </Switch>
     </Router>
   );

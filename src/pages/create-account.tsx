@@ -1,15 +1,15 @@
 import { gql, useMutation } from "@apollo/client";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { FormError } from "../conponents/form-error";
+import { FormError } from "../components/form-error";
 import nuberLogo from "../images/logo.svg"
-import { Button } from "../conponents/button";
 import { Link, useHistory } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { UserRole } from "../__generated__/globalTypes";
 import { createAccountMutation, createAccountMutationVariables } from "../__generated__/createAccountMutation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBroadcastTower } from "@fortawesome/free-solid-svg-icons";
+import { Button } from "../components/button";
 
 const CREATE_ACCOUNT_MUTATION = gql`
   mutation createAccountMutation($createAccountInput: CreateAccountInput!) {
